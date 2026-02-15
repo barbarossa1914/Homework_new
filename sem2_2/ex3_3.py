@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class Graph:
 
     def __init__(self):
@@ -16,7 +17,6 @@ class Graph:
         dist = {vertex: 'z'*1000 for vertex in self.vertices}
         dist[start] = ''
 
-
         while True:
             if not (False in visited.values()):
                 break
@@ -28,9 +28,11 @@ class Graph:
             visited[min_vertex] = True
 
             for neighbor in self.graph[min_vertex]:
-                new_dist = min(dist[min_vertex] + neighbor[1], dist[neighbor[0]])
+                new_dist = min(dist[min_vertex] + neighbor[1],
+                               dist[neighbor[0]])
                 dist[neighbor[0]] = new_dist
         return dist
+
 
 graph_1 = Graph()
 graph_1.add_edge(1, 2, 'a')

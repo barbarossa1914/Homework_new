@@ -6,6 +6,7 @@ x, y = x - 1, y - 1
 start_cell = (x, y)
 chessboard = [[0 for i in range(nn)] for j in range(nn)]
 
+
 class Graph:
 
     def __init__(self):
@@ -43,9 +44,11 @@ class Graph:
 
 graph_1 = Graph()
 
+
 def build_graph(n, start_x, start_y, board, graph):
     board[start_x][start_y] = 1
-    moves = [(1, 2), (1, -2), (-1, 2), (-1, -2), (2, 1), (2, -1), (-2, 1), (-2, -1)]
+    moves = [(1, 2), (1, -2), (-1, 2), (-1, -2),
+             (2, 1), (2, -1), (-2, 1), (-2, -1)]
     for move in moves:
         h_x, h_y = move[0] + start_x, move[1] + start_y
         if (-1 < h_x < n) and (-1 < h_y < n):

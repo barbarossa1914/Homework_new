@@ -1,5 +1,6 @@
 from collections import defaultdict
 
+
 class Graph:
 
     def __init__(self):
@@ -67,10 +68,11 @@ for i in range(n):
 
 def find_social_clusters():
     sccs_groups = Graph_1.find_sccs()
-    sccs_groups.sort(key=lambda x:-len(x))
+    sccs_groups.sort(key=lambda x: -len(x))
     for el in sccs_groups:
         el.sort()
     return sccs_groups
+
 
 print(find_social_clusters())
 
